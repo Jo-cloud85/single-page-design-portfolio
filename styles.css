@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+:root {
+    --galactic-blue: hsl(252, 66%, 62%);
+    --summer-yellow:hsla(28, 89%, 67%);
+    --pink: hsl(0, 78%, 79%);
+    --light-red: hsl(7, 77%, 66%);
+    --cyan: hsl(172, 46%, 57%);
+    --dark-purple: hsl(314, 45%, 23%);
+    --black: hsl(0, 0%, 1%);
+    --medium-brown: hsl(30, 5%, 45%);
+    --light-cream: hsl(28, 100%, 97%);
+}
+
+html {
+    --bold56: calc((56 / var(--base) * 1rem));
+    --bold40: calc((40 / var(--base) * 1rem));
+    --bold32: calc((32 / var(--base) * 1rem));
+    --medium18: calc((18 / var(--base) * 1rem));
+    --r1110: calc((1110 / var(--base) * 1rem));
+    --r750: calc((750 / var(--base) * 1rem));
+    --r690: calc((690 / var(--base) * 1rem));
+    --r570: calc((570 / var(--base) * 1rem));
+    --r540: calc((540 / var(--base) * 1rem));
+    --r445: calc((445 / var(--base) * 1rem));
+    --r365: calc((365 / var(--base) * 1rem));
+    --r350: calc((350 / var(--base) * 1rem));
+    --r320: calc((320 / var(--base) * 1rem));
+    --r300: calc((300 / var(--base) * 1rem));
+    --r270: calc((270 / var(--base) * 1rem));
+    --r228: calc((228 / var(--base) * 1rem));
+    --r180: calc((180 / var(--base) * 1rem));
+    --r125: calc((125 / var(--base) * 1rem));
+    --r88: calc((88 / var(--base) * 1rem));
+    --r70: calc((70 / var(--base) * 1rem));
+    --r56: calc((56 / var(--base) * 1rem));
+    --r50: calc((50 / var(--base) * 1rem));
+    --r44: calc((44 / var(--base) * 1rem));
+    --r40: calc((40 / var(--base) * 1rem));
+    --r34: calc((50 / var(--base) * 1rem));
+    --r32: calc((32 / var(--base) * 1rem));
+    --r28: calc((28 / var(--base) * 1rem));
+    --r25: calc((25 / var(--base) * 1rem));
+    --r20: calc((20 / var(--base) * 1rem));
+    --r10: calc((10 / var(--base) * 1rem));
+    --base: 16;
+}
+
+/* ---------- Overall structure ---------- */
+body {
+    background-color: var(--light-cream);
+}
+
+main {
+    height: auto;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+#title-container,
+#skills-container,
+#self-intro-container,
+header,
+footer {
+    display: grid;
+    place-items: center;
+}
+
+/* ---------- Header ---------- */
+header {
+    background-color: var(--black);
+    border: none;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    line-height: var(--r28);
+    grid-template-columns: 7rem 1fr 18rem;
+    width: auto;
+    max-width: 100vw;
+    height: 4rem;
+    margin: 2rem 4rem;
+}
+
+header img {
+    width: 3rem;
+    height: 3rem;
+    padding: 0 1rem;
+    transition: all 0.2s ease-in;
+}
+
+header img:hover {
+    scale: 1.2;
+}
+
+#nav {
+    width: 100%;
+}
+
+#nav a {
+    color: var(--light-cream);
+    letter-spacing: 1px;
+    padding: 0 1.5rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in;
+}
+
+#nav a:hover {
+    color: var(--summer-yellow);
+}
+
+.topnav .icon {
+    display: none;
+}
+
+/* For horizontal scrolling of text */
+.btn-loop {
+    display: grid;
+    place-items: center;
+    border-top: 1px solid var(--light-cream);
+    border-bottom: 1px solid var(--light-cream);
+    cursor: pointer;
+    height: 2.5rem;
+    width: 70%;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.2s ease-in;
+}
+
+.btn-loop:hover {
+    border-top: 1px solid var(--summer-yellow);
+    border-bottom: 1px solid var(--summer-yellow);
+}
+
+.btn-black {
+    background: transparent;
+    display: inline-block;
+    color: var(--light-cream);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: var(--r28);
+}
+
+.btn-black.cloned {
+    position: absolute;
+    top: 15%;
+    left: 0%;
+}
+
+.btn-black .btn-text {
+    float: left;
+    padding-left: 1.5rem;
+}
+
+/* ---------- Title container ---------- */
+#title-container .title {
+    font-size: var(--bold56);
+    font-weight: 700;
+    line-height: var(--r70);
+    margin-top: var(--r70);
+}
+
+#title-container .title-description {
+    color: var(--medium-brown);
+    font-size: var(--medium18);
+    line-height: var(--r28);
+    margin-top: 1.5rem;
+    text-align: center;
+    width: var(--r750);
+}
+
+/* ---------- Skills container ---------- */
+#skills-container {
+    grid-template-areas:
+    "gd gd ui ap ph ph"
+    "gd gd il il mg mg";
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    color: var(--light-cream);
+    font-size: 1.5rem;
+    max-width: var(--r1110);
+    min-height: var(--r365);
+    margin: 5rem 0 8.5rem 0;
+    padding: 0 calc((100vw - var(--r1110)) / 2);
+}
+
+#graphic-design,
+#uiux,
+#apps,
+#illustrations,
+#photography,
+#motion-graphics {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+#graphic-design:hover,
+#uiux:hover,
+#apps:hover,
+#illustrations:hover,
+#photography:hover,
+#motion-graphics:hover {
+    scale: 1.03;
+}
+
+label {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 1.5rem;
+}
+
+#graphic-design img,
+#uiux img,
+#apps img,
+#illustrations img,
+#photography img,
+#motion-graphics img {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+}
+
+#graphic-design {
+    grid-area: gd;
+    background-color: var(--galactic-blue);
+}
+
+#uiux {
+    grid-area: ui;
+    background-color: var(--summer-yellow);
+}
+
+#apps {
+    grid-area: ap;
+    background-color: var(--pink);
+}
+
+#illustrations {
+    grid-area: il;
+    background-color: var(--light-red);
+}
+
+#photography {
+    grid-area: ph;
+    background-color: var(--cyan);
+}
+
+#motion-graphics {
+    grid-area: mg;
+    background-color: var(--dark-purple);
+}
+
+/* ---------- Self-intro container ---------- */
+#self-intro-container {
+    grid-template-columns: var(--r445) 1fr;
+    gap: var(--r125);
+    padding: 0 calc((100vw - var(--r1110)) / 2);
+}
+
+#self-intro-container img {
+    width: var(--r445);
+}
+
+#self-intro-title {
+    font-size: var(--bold40);
+    font-weight: 700;
+    line-height: var(--r50);
+}
+
+#self-intro-description {
+    color: var(--medium-brown);
+    font-size: var(--medium18);
+    line-height: var(--r28);
+    padding: var(--r34) 0;
+}
+
+strong {
+    position: relative;
+}
+  
+strong::before {
+    background-color: var(--pink);
+    opacity: 70%;
+    content: "";
+    position: absolute;
+    width: calc(100% + 4px);
+    height: 35%;
+    left: -2px;
+    bottom: 0;
+    z-index: -1;
+}
+
+.btn-orange {
+    background-color: var(--light-red);
+    border: none;
+    border-radius: calc(var(--r56) / 2);
+    color: var(--light-cream);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: var(--r28);
+    width: var(--r228);
+    height: var(--r56);
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.btn-orange:hover {
+    background-color: var(--summer-yellow);
+    outline: 2px solid var(--summer-yellow);
+    outline-offset: 4px;
+    scale: 0.97;
+}
+
+/* ---------- My Work container ---------- */
+#my-work-container {
+    text-align: center;
+    margin: var(--r88) 0;
+}
+
+#my-work-title {
+    font-size: var(--bold32);
+    font-weight: 700;
+    line-height: var(--bold40);
+    padding-bottom: var(--r56);
+}
+
+#my-work-thumbnails-1,
+#my-work-thumbnails-2 {
+    display: flex;
+    overflow: hidden;
+}
+
+/* For horizontal scrolling of img */
+.thumbnail-loop-1,
+.thumbnail-loop-2{
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+#my-work-thumbnails-1.cloned,
+#my-work-thumbnails-2.cloned {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.slide2 {
+    width: var(--r540);
+    height: var(--r365);
+}
+
+/* ---------- Cta container ---------- */
+#cta-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    background-color: var(--black);
+    border-radius: var(--r10);
+    box-sizing: border-box;
+    color: var(--light-cream);
+    height: var(--r320);
+    margin: var(--r125) calc((100vw - var(--r1110)) / 2);
+    padding: 4rem;
+}
+
+#cta-text {
+    max-width: var(--r540);
+}
+
+#cta-title {
+    font-size: var(--bold40);
+    font-weight: 700;
+    line-height: var(--r50);
+}
+
+#cta-description {
+    font-size: var(--medium18);
+    line-height: var(--r28);
+    padding-top: var(--r25);
+}
+
+#cta-container .btn-orange {
+    margin-right: var(--r34);
+}
+
+/* ---------- Footer container ---------- */
+footer {
+    background-color: var(--black);
+    border: none;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    grid-template-columns: 7rem 1fr;
+    width: auto;
+    max-width: 100vw;
+    height: 4rem;
+    margin: 2rem 4rem;
+}
+
+footer .logo {
+    width: 3rem;
+    height: 3rem;
+    padding: 0 1rem;
+    transition: all 0.3s ease-in;
+}
+
+footer .social-media-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: invert(100%) brightness(150%);
+    padding: 0 1.5rem;
+    transition: all 0.3s ease-in;
+}
+
+footer .logo:hover,
+footer .social-media-icon:hover {
+    scale: 1.2;
+}
+
+#nav-footer {
+    width: 95%;
+    text-align: end;
+}
+
+@media screen and (min-width: 320px) and (max-width: 750px) {
+    main {
+        overflow: hidden;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+        grid-template-columns: 5rem 1fr 18rem;
+        margin: 2rem 1rem;
+    }
+
+    #nav a {
+        padding: 0;
+        display: none;
+    }
+    
+    #nav a.icon {
+        float: left;
+        display: block;
+        padding: 0;
+    }
+
+    #nav.responsive {
+        position: relative;
+        left: 20px;
+    }
+
+    #nav.responsive .icon {
+        position: absolute;
+        left: -30px;
+        top: 0;
+    }
+
+    #nav.responsive a {
+        float: none;
+        display: inline-block;
+        padding: 2px;
+    }
+
+    /* ---------- Title container ---------- */
+    #title-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem;
+    }
+
+    #title-container .title {
+        font-size: var(--r34);
+        line-height: var(--r44);
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    #title-container .title-description {
+        width: auto;
+    }
+    
+    #skills-container {
+        grid-template-areas:
+        "gd gd"
+        "gd gd"
+        "ui ap"
+        "il il"
+        "ph ph"
+        "mg mg";
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        aspect-ratio: 1 / 3;
+        margin: 3rem 0 6rem 0;
+        padding: 0 1rem;
+    }
+
+    /* ---------- Self-intro container ---------- */
+    #self-intro-container {
+        grid-template-columns: 1fr;
+        gap: var(--r40);
+        box-sizing: border-box;
+        padding: 0 2.5rem;
+        text-align: center;
+    }
+
+    #self-intro-container img {
+        width: var(--r300);
+        margin-left: 0;
+    }
+
+    #self-intro-title {
+        font-size: var(--r28);
+        font-weight: 700;
+        line-height: var(--r32);
+    }
+
+    /* For horizontal scrolling of img */
+    .slide1,
+    .slide2 {
+        width: var(--r270);
+        height: var(--r180);
+    }
+
+    /* ---------- Cta container ---------- */
+    #cta-container {
+        flex-direction: column;
+        justify-content: center;
+        height: var(--r350);
+        margin: var(--r125) 2.5rem;
+        padding: 2.5rem;
+        text-align: center;
+    }
+
+    #cta-title {
+        font-size: var(--r28);
+        line-height: var(--r32);
+    }
+
+    #cta-description {
+        font-size: 1rem;
+        line-height: var(--r28);
+        padding-bottom: 1.5rem;
+    }
+
+    #cta-container .btn-orange {
+        margin-right: 0;
+    }
+
+    /* ---------- Footer container ---------- */
+    footer {
+        grid-template-columns: 5rem 1fr;
+        margin: 2rem 2rem;
+    }
+
+    footer .social-media-icon {
+        padding: 0 0.8rem;
+    }
+}
+
+@media screen and (min-width: 751px) and (max-width: 1200px){
+    main {
+        overflow: hidden;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+        grid-template-columns: 5rem 1fr 15rem;
+        margin: 2rem 2rem;
+    }
+
+    #nav a {
+        padding: 0 1rem;
+    }
+
+    /* ---------- Title container ---------- */
+    #title-container .title {
+        font-size: var(--r44);
+        font-weight: 700;
+        line-height: var(--r56);
+        margin-top: 4rem;
+        text-align: center;
+    }
+    
+    /* ---------- Skills container ---------- */
+    #skills-container {
+        grid-template-areas:
+        "gd gd ui ap"
+        "gd gd il il"
+        "ph ph mg mg";
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        aspect-ratio: 1 / 0.8;
+        margin: 4rem 0 7.5rem 0;
+        padding: 0 2.5rem;
+    }
+
+    /* ---------- Self-intro container ---------- */
+    #self-intro-container {
+        grid-template-columns: var(--r365) 1fr;
+        gap: var(--r70);
+        box-sizing: border-box;
+        padding: 0 2.5rem 0 0;
+    }
+
+    #self-intro-container img {
+        width: var(--r365);
+        margin-left: -3rem;
+        overflow: hidden;
+    }
+
+    #self-intro-title {
+        font-size: var(--bold32);
+        font-weight: 700;
+        line-height: var(--r40);
+    }
+    
+    #self-intro-description {
+        padding: 1.5rem 0;
+    }
+
+    /* ---------- My Work container ---------- */
+    #my-work-container {
+        margin: var(--r125) 0;
+    }
+
+    /* ---------- Cta container ---------- */
+    #cta-container {
+        flex-direction: column;
+        justify-content: center;
+        height: var(--r350);
+        margin: var(--r125) 2.5rem;
+        padding: 2.5rem;
+        text-align: center;
+    }
+
+    #cta-title {
+        font-size: var(--bold32);
+        line-height: var(--r40);
+    }
+
+    #cta-description {
+        padding-bottom: var(--r25);
+    }
+
+    #cta-container .btn-orange {
+        margin-right: 0;
+    }
+
+    /* ---------- Footer container ---------- */
+    footer {
+        margin: 2rem 2rem;
+    }
+}
