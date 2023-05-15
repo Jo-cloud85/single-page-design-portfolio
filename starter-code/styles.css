@@ -66,14 +66,14 @@ main {
 #title-container,
 #skills-container,
 #self-intro-container,
-header,
+nav,
 footer {
     display: grid;
     place-items: center;
 }
 
 /* ---------- Header ---------- */
-header {
+nav {
     background-color: var(--black);
     border: none;
     border-radius: 1rem;
@@ -87,22 +87,22 @@ header {
     margin: 2rem 4rem;
 }
 
-header img {
+nav img {
     width: 3rem;
     height: 3rem;
     padding: 0 1rem;
     transition: all 0.2s ease-in;
 }
 
-header img:hover {
+nav img:hover {
     scale: 1.2;
 }
 
-#nav {
+#navbar {
     width: 100%;
 }
 
-#nav a {
+#navbar a {
     color: var(--light-cream);
     letter-spacing: 1px;
     padding: 0 1.5rem;
@@ -110,7 +110,7 @@ header img:hover {
     transition: all 0.2s ease-in;
 }
 
-#nav a:hover {
+#navbar a:hover {
     color: var(--summer-yellow);
 }
 
@@ -442,34 +442,34 @@ footer .social-media-icon:hover {
     }
 
     /* ---------- Header ---------- */
-    header {
+    nav {
         grid-template-columns: 5rem 1fr 18rem;
         margin: 2rem 1rem;
     }
 
-    #nav a {
+    #navbar a {
         padding: 0;
         display: none;
     }
     
-    #nav a.icon {
+    #navbar a.icon {
         float: left;
         display: block;
         padding: 0;
     }
 
-    #nav.responsive {
+    #navbar.responsive {
         position: relative;
         left: 20px;
     }
 
-    #nav.responsive .icon {
+    #navbar.responsive .icon {
         position: absolute;
         left: -30px;
         top: 0;
     }
 
-    #nav.responsive a {
+    #navbar.responsive a {
         float: none;
         display: inline-block;
         padding: 2px;
@@ -577,12 +577,12 @@ footer .social-media-icon:hover {
     }
 
     /* ---------- Header ---------- */
-    header {
+    nav {
         grid-template-columns: 5rem 1fr 15rem;
         margin: 2rem 2rem;
     }
 
-    #nav a {
+    #navbar a {
         padding: 0 1rem;
     }
 
