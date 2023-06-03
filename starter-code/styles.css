@@ -337,8 +337,8 @@ strong::before {
     padding-bottom: var(--r56);
 }
 
-#my-work-thumbnails-1,
-#my-work-thumbnails-2 {
+.my-work-thumbnails-1,
+.my-work-thumbnails-2 {
     display: flex;
     overflow: hidden;
 }
@@ -351,8 +351,8 @@ strong::before {
     position: relative;
 }
 
-#my-work-thumbnails-1.cloned,
-#my-work-thumbnails-2.cloned {
+.my-work-thumbnails-1.cloned,
+.my-work-thumbnails-2.cloned {
     position: absolute;
     top: 0%;
     left: 0%;
